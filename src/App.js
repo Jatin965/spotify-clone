@@ -39,6 +39,20 @@ function App() {
           playlists,
         });
       });
+
+      spotify.getPlaylist("37i9dQZEVXcHBMowYCYoYw").then((response) =>
+        dispatch({
+          type: "SET_DISCOVER_WEEKLY",
+          discover_weekly: response,
+        })
+      );
+
+      spotify.getMyTopArtists().then((response) =>
+        dispatch({
+          type: "SET_TOP_ARTISTS",
+          top_artists: response,
+        })
+      );
     }
   }, [token]);
 

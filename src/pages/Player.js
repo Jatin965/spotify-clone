@@ -2,7 +2,7 @@ import React from "react";
 import "./Player.css";
 
 import Sidebar from "../components/Sidebar/Sidebar";
-import Body from "../components/Body";
+import Body from "../components/body/Body";
 import Footer from "../components/Footer";
 
 const Player = ({ spotify }) => {
@@ -10,10 +10,10 @@ const Player = ({ spotify }) => {
     <div className="player">
       <div className="player__body">
         <Sidebar />
-        <Body />
+        <Body spotify={spotify} />
       </div>
 
-      <Footer />
+      <Footer spotify={spotify} />
     </div>
   );
 };
